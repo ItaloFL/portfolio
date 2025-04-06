@@ -10,7 +10,7 @@ import Git from "../assets/knowlege-logo/Git.svg";
 import PrismaORM from "../assets/knowlege-logo/PrismaORM.svg"
 import TailwindCSS from "../assets/knowlege-logo/TailwindCSS.svg";
 import React from "../assets/knowlege-logo/React.svg";
-import Typescript from "../assets/knowlege-logo/Typescript.svg";
+import Typescript from "../assets/knowlege-logo/TypeScript.svg"
 import Zod from "../assets/knowlege-logo/Zod.svg";
 
 import curriculum from "../assets/curriculum.pdf";
