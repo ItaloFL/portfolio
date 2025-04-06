@@ -1,8 +1,8 @@
 import AboutIMG from "../assets/img-about.png";
-import Figma from "../assets/knowlege-logo/figma.svg";
-import VScode from "../assets/knowlege-logo/vscode.svg";
-import Notion from "../assets/knowlege-logo/notion.svg";
-import Insomnia from "../assets/knowlege-logo/insomnia.svg";
+import Figma from "../assets/knowlege-logo/Figma.svg";
+import VScode from "../assets/knowlege-logo/Vscode.svg";
+import Notion from "../assets/knowlege-logo/Notion.svg";
+import Insomnia from "../assets/knowlege-logo/Insomnia.svg";
 
 import Docker from "../assets/knowlege-logo/Docker.svg";
 import Nodejs from "../assets/knowlege-logo/Nodejs.svg";
@@ -11,7 +11,7 @@ import PrismaORM from "../assets/knowlege-logo/PrismaORM.svg";
 import TailwindCSS from "../assets/knowlege-logo/TailwindCSS.svg";
 import React from "../assets/knowlege-logo/React.svg";
 import Typescript from "../assets/knowlege-logo/Typescript.svg";
-import Zod from "../assets/knowlege-logo/zod.svg";
+import Zod from "../assets/knowlege-logo/Zod.svg";
 
 import curriculum from "../assets/curriculum.pdf";
 
