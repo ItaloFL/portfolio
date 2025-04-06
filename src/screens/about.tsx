@@ -5,9 +5,9 @@ import Notion from "../assets/knowlege-logo/Notion.svg";
 import Insomnia from "../assets/knowlege-logo/Insomnia.svg";
 
 import Docker from "../assets/knowlege-logo/Docker.svg";
-import Nodejs from "../assets/knowlege-logo/Nodejs.svg";
+import Nodejs from "../assets/knowlege-logo/NodeJS.svg"
 import Git from "../assets/knowlege-logo/Git.svg";
-import PrismaORM from "../assets/knowlege-logo/PrismaORM.svg";
+import PrismaORM from "../assets/knowlege-logo/PrismaORM.svg"
 import TailwindCSS from "../assets/knowlege-logo/TailwindCSS.svg";
 import React from "../assets/knowlege-logo/React.svg";
 import Typescript from "../assets/knowlege-logo/Typescript.svg";
