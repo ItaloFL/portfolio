@@ -129,7 +129,7 @@ export function Footer() {
                 />
               </Link>
               <Link
-                to="https://linkedin.com/in/ItaloFL"
+                to="https://www.linkedin.com/in/italo-ferreira-dev"
                 target="_blank"
                 className="cursor-pointer rounded-full"
               >

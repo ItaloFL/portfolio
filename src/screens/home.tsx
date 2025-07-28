@@ -44,7 +44,7 @@ export function Home() {
               />
             </Link>
             <Link
-              to="https://github.com/ItaloFL"
+              to="https://www.linkedin.com/in/italo-ferreira-dev"
               target="_blank"
               className="p-2 cursor-pointer transition-colors"
             >

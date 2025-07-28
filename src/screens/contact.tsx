@@ -42,7 +42,7 @@ export function Contact() {
                 />
               </Link>
               <Link
-                to="https://github.com/ItaloFL"
+                to="https://www.linkedin.com/in/italo-ferreira-dev"
                 target="_blank"
                 className="cursor-pointer p-1 rounded-full"
               >
