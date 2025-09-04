@@ -23,7 +23,7 @@ export function ProjectCard({
   return (
     <div>
       <RevealOnScroll>
-        <div className="relative w-full h-[250px] rounded-md overflow-hidden group transition-colors">
+        <div className="relative w-full h-full rounded-md overflow-hidden group transition-colors">
           <img
             src={imgURL}
             className="w-full object-cover transition-all group-hover:grayscale"
