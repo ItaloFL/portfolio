@@ -2,8 +2,6 @@ import { ArrowSquareIn, GithubLogo } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import { RevealOnScroll } from "./revealOnScroll";
 
-
-
 interface ProjectCardProps {
   key: number;
   title: string;
@@ -25,10 +23,10 @@ export function ProjectCard({
   return (
     <div>
       <RevealOnScroll>
-        <div className="relative w-[500px] h-[250px] rounded-md overflow-hidden group transition-colors sm md:w-[450px] 2xl:w-[445px]">
+        <div className="relative w-full h-[250px] rounded-md overflow-hidden group transition-colors">
           <img
             src={imgURL}
-            className="absolute w-full h-full object-cover transition-all group-hover:grayscale"
+            className="w-full object-cover transition-all group-hover:grayscale"
             alt=""
           />
           <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10">

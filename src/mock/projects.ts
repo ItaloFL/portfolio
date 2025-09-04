@@ -17,7 +17,7 @@ export const PROJECTS = [
     imgURL: porfolio,
     title: "Portfólio",
     description:
-      "O website foi feito para criar o meu portfolio e demonstrar minha capacidades tecnicas",
+      "O website foi feito para criar o meu portfolio e demonstrar minha capacidades tecnicas e ser capaz de mostrar minha capacidade na web",
     repoLink: "https://github.com/ItaloFL/portfolio",
     sourceLink: "https://portfolio-italofls-projects.vercel.app",
     techIcons: [React, TailwindCSS, TypeScript, Git, Zod],
@@ -47,7 +47,7 @@ export const PROJECTS = [
     imgURL: coffeDelivery,
     title: "Coffe Delivery",
     description:
-      "Website feito em desafio da Rocketseat realizado para fortificar em conhecimentos de criação de pagina web",
+      "Website feito em desafio da Rocketseat realizado para fortificar em conhecimentos de criação de pagina web e foco em situações com contexto",
     repoLink: "https://github.com/ItaloFL/Coffe-Delivery",
     sourceLink: "https://coffe-delivery-vert.vercel.app",
     techIcons: [React, Prisma, TailwindCSS, TypeScript],

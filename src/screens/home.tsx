@@ -24,7 +24,7 @@ export function Home() {
 
           <ul className="flex items-center justify-center mt-8 gap-4">
             <Link
-              to="https://github.com/ItaloFL"
+              to="https://www.instagram.com/italonfl"
               target="_blank"
               className="p-2 cursor-pointer transition-colors"
             >

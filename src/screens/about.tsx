@@ -13,7 +13,7 @@ import React from "../assets/knowlege-logo/React.svg";
 import Typescript from "../assets/knowlege-logo/TypeScript.svg"
 import Zod from "../assets/knowlege-logo/Zod.svg";
 
-import curriculum from "../assets/curriculum.pdf";
+import curriculum from "../assets/curriculo.pdf";
 
 import { RevealOnScroll } from "@/components/revealOnScroll";
 

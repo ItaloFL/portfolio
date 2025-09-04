@@ -119,7 +119,7 @@ export function Footer() {
             </p>
             <ul className="flex gap-4 items-center">
               <Link
-                to="https://github.com/ItaloFL"
+                to="https://www.instagram.com/italonfl"
                 target="_blank"
                 className="cursor-pointer rounded-full"
               >
