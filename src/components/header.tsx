@@ -1,23 +1,23 @@
-import { Moon, Sun } from "@phosphor-icons/react";
-import { Link, useLocation } from "react-router-dom";
-import { useTheme } from "../context/themeProvider";
-import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { Moon, Sun } from '@phosphor-icons/react'
+import { Link, useLocation } from 'react-router-dom'
+import { useTheme } from '../context/themeProvider'
+import { Dialog, DialogContent, DialogTrigger } from './ui/dialog'
 import {
   BookOpenCheck,
   ChevronDown,
   Contact,
-  FolderOpenDot,
-} from "lucide-react";
-import { useState } from "react";
+  FolderOpenDot
+} from 'lucide-react'
+import { useState } from 'react'
 
 export function Header() {
-  const { theme, toggleTheme } = useTheme();
-  const [open, setOpen] = useState(false);
-  const location = useLocation();
+  const { theme, toggleTheme } = useTheme()
+  const [open, setOpen] = useState(false)
+  const location = useLocation()
 
   return (
     <header className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-between w-full max-w-5xl py-8 transition-colors px-10">
-      <Link to={"/"} className="logo">
+      <Link to={'/'} className="logo">
         <svg
           width="435"
           height="289"
@@ -55,28 +55,28 @@ export function Header() {
 
       <ul className="hidden md:flex gap-10 font-semibold bg-contrast-color border transition-colors border-border-color text-primary-color p-3 px-5 rounded-full dark:bg-contrast-color-dark dark:border-border-color-dark dark:text-primary-color-dark">
         <Link
-          to={"about"}
+          to={'about'}
           className={`cursor-pointer transition-colors hover:text-link-hover-color ${
-            location.pathname.includes("about") ? "text-link-hover-color" : ""
+            location.pathname.includes('about') ? 'text-link-hover-color' : ''
           }`}
         >
           Sobre
         </Link>
 
         <Link
-          to={"projects"}
+          to={'projects'}
           className={`cursor-pointer transition-colors hover:text-link-hover-color ${
-            location.pathname.includes("projects")
-              ? "text-link-hover-color"
-              : ""
+            location.pathname.includes('projects')
+              ? 'text-link-hover-color'
+              : ''
           }`}
         >
           Projetos
         </Link>
         <Link
-          to={"contact"}
+          to={'contact'}
           className={`cursor-pointer transition-colors hover:text-link-hover-color ${
-            location.pathname.includes("contact") ? "text-link-hover-color" : ""
+            location.pathname.includes('contact') ? 'text-link-hover-color' : ''
           }`}
         >
           Contato
@@ -92,31 +92,61 @@ export function Header() {
             <p>Menu</p>
             <ChevronDown />
           </DialogTrigger>
-          <DialogContent className="text-primary-color fixed top-44 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[90vw] max-h-[80vh] overflow-y-auto p-6 bg-[#f9f9f9] border-0 rounded-md dark:bg-[#0f0f0f] dark:text-primary-color-dark">
+          <DialogContent className="text-primary-color fixed top-56 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[90vw] max-h-[80vh] overflow-y-auto p-6 bg-[#f9f9f9] border-0 rounded-md dark:bg-[#0f0f0f] dark:text-primary-color-dark">
             <ul className="flex flex-col my-10 gap-12 text-base font-semibold text-primary-color dark:text-primary-color-dark">
               <Link
-                to={"/about"}
+                to={'/about'}
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
+                className="p-2 rounded-md border border-link-hover-color flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
               >
-                <BookOpenCheck size={22} color="#F57C00" />
-                <p>Sobre</p>
+                <div className="bg-contrast-color border border-border-color dark:bg-contrast-color-dark dark:border-border-color-dark p-2 rounded-md">
+                  <BookOpenCheck
+                    size={22}
+                    className="text-[#000000] dark:text-[#FFFFFF]"
+                  />
+                </div>
+                <div>
+                  <p>Sobre</p>
+                  <p className="text-xs text-second-color">
+                    Saiba um pouco mais sobre mim
+                  </p>
+                </div>
               </Link>
               <Link
-                to={"projects"}
+                to={'projects'}
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
+                className="p-2 rounded-md border border-link-hover-color flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
               >
-                <FolderOpenDot size={22} color="#F57C00" />
-                <p>Projetos</p>
+                <div className="bg-contrast-color border border-border-color dark:bg-contrast-color-dark dark:border-border-color-dark p-2 rounded-md">
+                  <FolderOpenDot
+                    size={22}
+                    className="text-[#000000] dark:text-[#FFFFFF]"
+                  />
+                </div>
+                <div>
+                  <p>Projetos</p>
+                  <p className="text-xs text-second-color">
+                    Projetos desenvolvidos para aprendizado
+                  </p>
+                </div>
               </Link>
               <Link
-                to={"contact"}
+                to={'contact'}
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
+                className="p-2 rounded-md border border-link-hover-color flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
               >
-                <Contact size={22} color="#F57C00" />
-                <p>Contato</p>
+                <div className="bg-contrast-color border border-border-color dark:bg-contrast-color-dark dark:border-border-color-dark p-2 rounded-md">
+                  <Contact
+                    size={22}
+                    className="text-[#000000] dark:text-[#FFFFFF]"
+                  />
+                </div>
+                <div>
+                  <p>Contato</p>
+                  <p className="text-xs text-second-color">
+                    Entre em contato e vamos evoluir juntos
+                  </p>
+                </div>
               </Link>
             </ul>
           </DialogContent>
@@ -126,7 +156,7 @@ export function Header() {
           onClick={toggleTheme}
           className="bg-contrast-color border border-border-color p-2 rounded-full hover:bg-[#C8C8C8] transition-colors dark:bg-contrast-color-dark dark:border-border-color-dark dark:hover:bg-[#212121]"
         >
-          {theme === "dark" ? (
+          {theme === 'dark' ? (
             <Sun
               size={25}
               className="text-primary-color dark:text-primary-color-dark"
@@ -140,5 +170,5 @@ export function Header() {
         </button>
       </div>
     </header>
-  );
+  )
 }
