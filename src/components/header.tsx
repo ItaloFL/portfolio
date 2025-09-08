@@ -1,22 +1,14 @@
 import { Moon, Sun } from '@phosphor-icons/react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTheme } from '../context/themeProvider'
-import { Dialog, DialogContent, DialogTrigger } from './ui/dialog'
-import {
-  BookOpenCheck,
-  ChevronDown,
-  Contact,
-  FolderOpenDot
-} from 'lucide-react'
-import { useState } from 'react'
+import { Folder, Phone, User } from 'lucide-react'
 
 export function Header() {
   const { theme, toggleTheme } = useTheme()
-  const [open, setOpen] = useState(false)
   const location = useLocation()
 
   return (
-    <header className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-between w-full max-w-5xl py-8 transition-colors px-10">
+    <header className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-around w-full max-w-5xl py-8 transition-colors px-10">
       <Link to={'/'} className="logo">
         <svg
           width="435"
@@ -24,7 +16,7 @@ export function Header() {
           viewBox="0 0 435 289"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-[60px] h-[60px] text-black dark:text-white"
+          className="w-[50px] h-[50px] text-black dark:text-white md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px]"
         >
           <path
             d="M29.9039 288.651C24.0039 287.551 17.6539 284.401 12.6539 280.151C8.95388 277.001 4.40389 270.501 2.85389 266.151C0.353895 258.951 0.403883 260.501 0.403883 189.051C0.403883 124.951 0.453883 122.001 1.40388 117.501C4.20388 103.951 13.2539 94.1509 26.9039 89.9009C31.8039 88.3509 42.8039 88.2009 47.9039 89.6009C60.9039 93.2009 71.3039 103.701 74.2539 116.301C75.1039 120.001 75.1539 124.151 75.1539 189.451C75.1539 267.301 75.4539 261.001 71.3039 269.351C67.8539 276.401 60.3539 283.401 53.4039 286.151C48.0039 288.301 46.6039 288.551 38.9039 288.701C34.6539 288.801 30.6039 288.751 29.9039 288.651Z"
@@ -84,73 +76,37 @@ export function Header() {
       </ul>
 
       <div className="flex gap-10">
-        <Dialog open={open} onOpenChange={setOpen}>
-          <DialogTrigger
-            onClick={() => setOpen(true)}
-            className="md:hidden text-base uppercase flex items-center rounded-full px-4 py-2 border text-primary-color border-border-color bg-contrast-color transition-colors dark:bg-contrast-color-dark dark:border-border-color-dark dark:text-primary-color-dark dark:hover:bg-[#212121]"
+        <ul className="md:hidden flex gap-10 font-semibold bg-contrast-color border transition-colors border-border-color text-primary-color p-3 px-5 rounded-full dark:bg-contrast-color-dark dark:border-border-color-dark dark:text-primary-color-dark">
+          <Link
+            to={'about'}
+            className={`cursor-pointer transition-colors hover:text-link-hover-color ${
+              location.pathname.includes('about') ? 'text-link-hover-color' : ''
+            }`}
           >
-            <p>Menu</p>
-            <ChevronDown />
-          </DialogTrigger>
-          <DialogContent className="text-primary-color fixed top-56 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[90vw] max-h-[80vh] overflow-y-auto p-6 bg-[#f9f9f9] border-0 rounded-md dark:bg-[#0f0f0f] dark:text-primary-color-dark">
-            <ul className="flex flex-col my-10 gap-12 text-base font-semibold text-primary-color dark:text-primary-color-dark">
-              <Link
-                to={'/about'}
-                onClick={() => setOpen(false)}
-                className="p-2 rounded-md border border-link-hover-color flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
-              >
-                <div className="bg-contrast-color border border-border-color dark:bg-contrast-color-dark dark:border-border-color-dark p-2 rounded-md">
-                  <BookOpenCheck
-                    size={22}
-                    className="text-[#000000] dark:text-[#FFFFFF]"
-                  />
-                </div>
-                <div>
-                  <p>Sobre</p>
-                  <p className="text-xs text-second-color">
-                    Saiba um pouco mais sobre mim
-                  </p>
-                </div>
-              </Link>
-              <Link
-                to={'projects'}
-                onClick={() => setOpen(false)}
-                className="p-2 rounded-md border border-link-hover-color flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
-              >
-                <div className="bg-contrast-color border border-border-color dark:bg-contrast-color-dark dark:border-border-color-dark p-2 rounded-md">
-                  <FolderOpenDot
-                    size={22}
-                    className="text-[#000000] dark:text-[#FFFFFF]"
-                  />
-                </div>
-                <div>
-                  <p>Projetos</p>
-                  <p className="text-xs text-second-color">
-                    Projetos desenvolvidos para aprendizado
-                  </p>
-                </div>
-              </Link>
-              <Link
-                to={'contact'}
-                onClick={() => setOpen(false)}
-                className="p-2 rounded-md border border-link-hover-color flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
-              >
-                <div className="bg-contrast-color border border-border-color dark:bg-contrast-color-dark dark:border-border-color-dark p-2 rounded-md">
-                  <Contact
-                    size={22}
-                    className="text-[#000000] dark:text-[#FFFFFF]"
-                  />
-                </div>
-                <div>
-                  <p>Contato</p>
-                  <p className="text-xs text-second-color">
-                    Entre em contato e vamos evoluir juntos
-                  </p>
-                </div>
-              </Link>
-            </ul>
-          </DialogContent>
-        </Dialog>
+            <User size={20} />
+          </Link>
+
+          <Link
+            to={'projects'}
+            className={`cursor-pointer transition-colors hover:text-link-hover-color ${
+              location.pathname.includes('projects')
+                ? 'text-link-hover-color'
+                : ''
+            }`}
+          >
+            <Folder size={20} />
+          </Link>
+          <Link
+            to={'contact'}
+            className={`cursor-pointer transition-colors hover:text-link-hover-color ${
+              location.pathname.includes('contact')
+                ? 'text-link-hover-color'
+                : ''
+            }`}
+          >
+            <Phone size={20} />
+          </Link>
+        </ul>
 
         <button
           onClick={toggleTheme}
