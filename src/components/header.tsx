@@ -24,7 +24,7 @@ export function Header() {
           viewBox="0 0 435 289"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-[60px] h-[60px] text-black dark:text-white"
+          className="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] text-black dark:text-white"
         >
           <path
             d="M29.9039 288.651C24.0039 287.551 17.6539 284.401 12.6539 280.151C8.95388 277.001 4.40389 270.501 2.85389 266.151C0.353895 258.951 0.403883 260.501 0.403883 189.051C0.403883 124.951 0.453883 122.001 1.40388 117.501C4.20388 103.951 13.2539 94.1509 26.9039 89.9009C31.8039 88.3509 42.8039 88.2009 47.9039 89.6009C60.9039 93.2009 71.3039 103.701 74.2539 116.301C75.1039 120.001 75.1539 124.151 75.1539 189.451C75.1539 267.301 75.4539 261.001 71.3039 269.351C67.8539 276.401 60.3539 283.401 53.4039 286.151C48.0039 288.301 46.6039 288.551 38.9039 288.701C34.6539 288.801 30.6039 288.751 29.9039 288.651Z"
@@ -56,7 +56,7 @@ export function Header() {
       <ul className="hidden md:flex gap-10 font-semibold bg-contrast-color border transition-colors border-border-color text-primary-color p-3 px-5 rounded-full dark:bg-contrast-color-dark dark:border-border-color-dark dark:text-primary-color-dark">
         <Link
           to={'about'}
-          className={`cursor-pointer transition-colors hover:text-link-hover-color ${
+          className={`outline-purple-400 cursor-pointer transition-colors hover:text-link-hover-color ${
             location.pathname.includes('about') ? 'text-link-hover-color' : ''
           }`}
         >
@@ -106,7 +106,15 @@ export function Header() {
                   />
                 </div>
                 <div>
-                  <p>Sobre</p>
+                  <p
+                    className={`${
+                      location.pathname.includes('about')
+                        ? 'text-link-hover-color'
+                        : ''
+                    }`}
+                  >
+                    Sobre
+                  </p>
                   <p className="text-xs text-second-color">
                     Saiba um pouco mais sobre mim
                   </p>
@@ -124,7 +132,15 @@ export function Header() {
                   />
                 </div>
                 <div>
-                  <p>Projetos</p>
+                  <p
+                    className={`${
+                      location.pathname.includes('projects')
+                        ? 'text-link-hover-color'
+                        : ''
+                    }`}
+                  >
+                    Projetos
+                  </p>
                   <p className="text-xs text-second-color">
                     Projetos desenvolvidos para aprendizado
                   </p>
@@ -142,7 +158,15 @@ export function Header() {
                   />
                 </div>
                 <div>
-                  <p>Contato</p>
+                  <p
+                    className={`${
+                      location.pathname.includes('contact')
+                        ? 'text-link-hover-color'
+                        : ''
+                    }`}
+                  >
+                    Contato
+                  </p>
                   <p className="text-xs text-second-color">
                     Entre em contato e vamos evoluir juntos
                   </p>

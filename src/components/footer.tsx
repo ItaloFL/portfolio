@@ -16,6 +16,7 @@ export function Footer() {
     isPlaying: boolean;
     album_img: string;
   } | null>(null);
+  const getCurrentYear = new Date().getFullYear()
 
   const client_id = env.VITE_SPOTIFY_CLIENT_ID;
   const client_secret = env.VITE_SPOTIFY_SECRET;
@@ -149,7 +150,7 @@ export function Footer() {
                 />
               </Link>
             </ul>
-            <p className="mb-8">© 2024 copyright all rights reserved</p>
+            <p className="mb-8">© {getCurrentYear} copyright all rights reserved</p>
           </div>
 
           <div className="flex flex-col md:flex-row md:gap-10 xl:gap-20 2xl:gap-14">
