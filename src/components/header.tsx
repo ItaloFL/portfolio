@@ -99,7 +99,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className=" flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
               >
-                <div className=" dark:bg-contrast-color-dark dark:border-border-color-dark p-2 rounded-md">
+                <div className="bg-contrast-color border border-border-color dark:bg-contrast-color-dark dark:border-border-color-dark p-2 rounded-md">
                   <BookOpenCheck
                     size={22}
                     className="text-[#000000] dark:text-[#FFFFFF]"
@@ -149,9 +149,9 @@ export function Header() {
               <Link
                 to={'contact'}
                 onClick={() => setOpen(false)}
-                className=" flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
+                className="flex items-center gap-5 cursor-pointer transition-colors hover:text-link-hover-color"
               >
-                <div className=" dark:bg-contrast-color-dark dark:border-border-color-dark p-2 rounded-md">
+                <div className="bg-contrast-color border border-border-color dark:bg-contrast-color-dark dark:border-border-color-dark p-2 rounded-md">
                   <Contact
                     size={22}
                     className="text-[#000000] dark:text-[#FFFFFF]"
@@ -178,7 +178,7 @@ export function Header() {
 
         <button
           onClick={toggleTheme}
-          className=" p-2 rounded-full hover:bg-[#C8C8C8] transition-colors dark:bg-contrast-color-dark dark:border-border-color-dark dark:hover:bg-[#212121]"
+          className=" p-2 rounded-full hover:bg-[#C8C8C8] bg-contrast-color transition-colors dark:bg-contrast-color-dark dark:border-border-color-dark dark:hover:bg-[#212121]"
         >
           {theme === 'dark' ? (
             <Sun
