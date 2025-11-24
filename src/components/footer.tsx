@@ -121,32 +121,29 @@ export function Footer() {
               <Link
                 to="https://www.instagram.com/italonfl"
                 target="_blank"
-                className="cursor-pointer rounded-full"
+                className="cursor-pointer rounded-full transition-colors"
               >
                 <InstagramLogo
                   size={25}
-                  className="text-primary-color dark:text-primary-color-dark"
+                  className="hover:text-link-hover-color"
                 />
               </Link>
               <Link
                 to="https://www.linkedin.com/in/italo-ferreira-dev"
                 target="_blank"
-                className="cursor-pointer rounded-full"
+                className="cursor-pointer rounded-full transition-colors"
               >
                 <LinkedinLogo
                   size={25}
-                  className="text-primary-color dark:text-primary-color-dark"
+                  className="hover:text-link-hover-color"
                 />
               </Link>
               <Link
                 to="https://github.com/ItaloFL"
                 target="_blank"
-                className="cursor-pointer rounded-full"
+                className="cursor-pointer rounded-full transition-colors"
               >
-                <GithubLogo
-                  size={25}
-                  className="text-primary-color dark:text-primary-color-dark"
-                />
+                <GithubLogo size={25} className="hover:text-link-hover-color" />
               </Link>
             </ul>
             <p className="mb-8">© 2024 copyright all rights reserved</p>

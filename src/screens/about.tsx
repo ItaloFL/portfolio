@@ -5,17 +5,18 @@ import Notion from "../assets/knowlege-logo/Notion.svg";
 import Insomnia from "../assets/knowlege-logo/Insomnia.svg";
 
 import Docker from "../assets/knowlege-logo/Docker.svg";
-import Nodejs from "../assets/knowlege-logo/NodeJS.svg"
+import Nodejs from "../assets/knowlege-logo/NodeJS.svg";
 import Git from "../assets/knowlege-logo/Git.svg";
-import PrismaORM from "../assets/knowlege-logo/PrismaORM.svg"
+import PrismaORM from "../assets/knowlege-logo/PrismaORM.svg";
 import TailwindCSS from "../assets/knowlege-logo/TailwindCSS.svg";
 import React from "../assets/knowlege-logo/React.svg";
-import Typescript from "../assets/knowlege-logo/TypeScript.svg"
+import Typescript from "../assets/knowlege-logo/TypeScript.svg";
 import Zod from "../assets/knowlege-logo/Zod.svg";
 
 import curriculum from "../assets/curriculo.pdf";
 
 import { RevealOnScroll } from "@/components/revealOnScroll";
+import { FileDown } from "lucide-react";
 
 export function About() {
   return (
@@ -71,11 +72,17 @@ export function About() {
                   alt="Sobre mim"
                 />
 
-                <button className="w-[200px] h-[40px] bg-red-400 transition-colors duration-300 rounded-md border-[2px] border-link-hover-color bg-transparent text-primary-color dark:text-primary-color-dark hover:bg-link-hover-color">
-                  <a href={curriculum} download>
-                    Dowload CV
-                  </a>
-                </button>
+                <a
+                  href={curriculum}
+                  download
+                  className="w-[200px] h-[42px] flex items-center justify-center gap-2
+  rounded-md font-medium text-black bg-link-hover-color 
+  transition-all duration-300 hover:brightness-90
+  dark:text-white"
+                >
+                  <FileDown size={18} />
+                  Currículo
+                </a>
               </div>
             </div>
           </RevealOnScroll>
