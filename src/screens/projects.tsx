@@ -6,7 +6,7 @@ export function Projects() {
     <>
       <div className="bg-[#F9F9F9] dark:bg-[#0F0F0F] transition-colors pt-[6rem]">
         <ul className="grid grid-cols-1 gap-14 py-[7rem] max-w-5xl mx-auto px-10 md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2">
-          {PROJECTS.map((project) => { 
+          {PROJECTS.map((project) => {
             return (
               <ProjectCard
                 key={project.idProject}

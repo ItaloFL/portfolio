@@ -12,6 +12,8 @@ import TailwindCSS from "../assets/knowlege-logo/TailwindCSS.svg";
 import React from "../assets/knowlege-logo/React.svg";
 import Typescript from "../assets/knowlege-logo/TypeScript.svg";
 import Zod from "../assets/knowlege-logo/Zod.svg";
+import Redis from '../assets/knowlege-logo/Redis.svg';
+import ReactQuery from "../assets/knowlege-logo/ReactQuery.svg";
 
 import curriculum from "../assets/curriculo.pdf";
 
@@ -231,6 +233,28 @@ export function About() {
                   <div className="flex flex-col gap-2 ">
                     <p className="text-base text-title-color font-semibold dark:text-title-color-dark">
                       Zod
+                    </p>
+                    <span className="text-second-color dark:text-second-color-dark">
+                      Desenvolvimento
+                    </span>
+                  </div>
+                </li>
+                <li className="flex gap-4 pb-[30px] justify-start border-b border-b-divider-color border-opacity-15 dark:border-b-divider-color-dark">
+                  <img src={Redis} className="p-1 size-12" />
+                  <div className="flex flex-col gap-2 ">
+                    <p className="text-base text-title-color font-semibold dark:text-title-color-dark">
+                      Redis
+                    </p>
+                    <span className="text-second-color dark:text-second-color-dark">
+                      Cache
+                    </span>
+                  </div>
+                </li>
+                <li className="flex gap-4 pb-[30px] justify-start border-b border-b-divider-color border-opacity-15 dark:border-b-divider-color-dark">
+                  <img src={ReactQuery} className="p-1 size-12" />
+                  <div className="flex flex-col gap-2 ">
+                    <p className="text-base text-title-color font-semibold dark:text-title-color-dark">
+                      React Query Tanstack
                     </p>
                     <span className="text-second-color dark:text-second-color-dark">
                       Desenvolvimento

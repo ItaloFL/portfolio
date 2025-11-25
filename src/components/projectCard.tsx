@@ -26,7 +26,7 @@ export function ProjectCard({
         <div className="relative w-full h-full rounded-md overflow-hidden group transition-colors">
           <img
             src={imgURL}
-            className="w-full min-h-[220px] object-cover transition-all group-hover:grayscale"
+            className="w-full object-cover transition-all group-hover:grayscale xl:min-h-[220px]"
             alt=""
           />
           <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10">
