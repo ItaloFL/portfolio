@@ -16,88 +16,38 @@ export function Footer() {
     isPlaying: boolean;
     album_img: string;
   } | null>(null);
-  const getCurrentYear = new Date().getFullYear()
-
-  const client_id = env.VITE_SPOTIFY_CLIENT_ID;
-  const client_secret = env.VITE_SPOTIFY_SECRET;
-  const refresh_token = env.VITE_SPOTIFY_REFRESH_TOKEN;
-
-  const getAccessToken = async () => {
-    try {
-      const credentials = `${client_id}:${client_secret}`;
-      const encodedCredentials = btoa(credentials);
-
-      const response = await fetch("https://accounts.spotify.com/api/token", {
-        method: "POST",
-        headers: {
-          Authorization: `Basic ${encodedCredentials}`,
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          grant_type: "refresh_token",
-          refresh_token: refresh_token,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch access token");
-      }
-
-      const data = await response.json();
-      return data.access_token;
-    } catch (error) {
-      console.error("Error fetching access token:", error);
-    }
-  };
-
-  const fetchCurrentPlaying = async (token: string) => {
-    try {
-      const response = await fetch(
-        "https://api.spotify.com/v1/me/player/currently-playing",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      if (response.status === 204) {
-        setCurrentTrack(null);
-        return;
-      }
-
-      if (!response.ok) {
-        throw new Error(
-          `Failed to fetch currently playing track: ${response.status}`
-        );
-      }
-
-      const data = await response.json();
-
-      setCurrentTrack({
-        name: data.item.name,
-        artist: data.item.artists[0].name,
-        isPlaying: data.is_playing,
-        album_img: data.item.album.images[0].url,
-      });
-      return data;
-    } catch (error) {
-      console.error("Error fetching currently playing track:", error);
-    }
-  };
+  const getCurrentYear = new Date().getFullYear();
 
   useEffect(() => {
     const fetchData = async () => {
-      const token = await getAccessToken();
-      if (token) {
-        await fetchCurrentPlaying(token);
+      try {
+        const response = await fetch("/api/now-playing");
+
+        if (!response.ok) {
+          setCurrentTrack(null);
+          return;
+        }
+
+        const data = await response.json();
+
+        if (data && data.isPlaying) {
+          setCurrentTrack({
+            name: data.name,
+            artist: data.artist,
+            isPlaying: true,
+            album_img: data.album_img,
+          });
+        } else {
+          setCurrentTrack(null);
+        }
+      } catch (error) {
+        console.error("Erro ao buscar música:", error);
+        setCurrentTrack(null);
       }
     };
 
-    const interval = setInterval(() => {
-      fetchData();
-    }, 5000);
-
+    fetchData();
+    const interval = setInterval(fetchData, 10000);
     return () => clearInterval(interval);
   }, []);
 
@@ -147,7 +97,9 @@ export function Footer() {
                 <GithubLogo size={25} className="hover:text-link-hover-color" />
               </Link>
             </ul>
-            <p className="mb-8">© {getCurrentYear} copyright all rights reserved</p>
+            <p className="mb-8">
+              © {getCurrentYear} copyright all rights reserved
+            </p>
           </div>
 
           <div className="flex flex-col md:flex-row md:gap-10 xl:gap-20 2xl:gap-14">
