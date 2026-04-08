@@ -113,6 +113,9 @@ export function Footer() {
                   <Link to="/about" className="hover:text-link-hover-color">
                     Sobre mim
                   </Link>
+                  <Link to="/experience" className="hover:text-link-hover-color">
+                    Experiências
+                  </Link>
                 </ul>
               </div>
               <div>
