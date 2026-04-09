@@ -34,7 +34,6 @@ export function Footer() {
           setCurrentTrack(null);
         }
       } catch (error) {
-        console.error("Erro ao buscar música:", error);
         setCurrentTrack(null);
       }
     };

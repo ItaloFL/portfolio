@@ -16,7 +16,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       "base64",
     );
 
-    console.log(client_id, client_secret, refresh_token);
 
     const tokenResponse = await fetch(TOKEN_ENDPOINT, {
       method: "POST",
@@ -61,7 +60,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       album_img: song.item.album.images[0].url,
     });
   } catch (error) {
-    console.error("Erro na função:", error);
     return res
       .status(500)
       .json({ isPlaying: false, message: "Internal Server Error" });
