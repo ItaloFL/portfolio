@@ -6,6 +6,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const client_secret = env.SPOTIFY_SECRET;
   const refresh_token = env.SPOTIFY_REFRESH_TOKEN;
 
+  console.log(client_id, client_secret, refresh_token)
+
   // URLs oficiais do Spotify
   const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
   const NOW_PLAYING_ENDPOINT =

@@ -7,7 +7,7 @@ import {
   SpotifyLogo,
 } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
-import { env } from "@/env";
+import axios from "axios";
 
 export function Footer() {
   const [currentTrack, setCurrentTrack] = useState<{
@@ -21,14 +21,7 @@ export function Footer() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/now-playing");
-
-        if (!response.ok) {
-          setCurrentTrack(null);
-          return;
-        }
-
-        const data = await response.json();
+        const { data } = await axios.get("/api/now-playing");
 
         if (data && data.isPlaying) {
           setCurrentTrack({
@@ -113,7 +106,10 @@ export function Footer() {
                   <Link to="/about" className="hover:text-link-hover-color">
                     Sobre mim
                   </Link>
-                  <Link to="/experience" className="hover:text-link-hover-color">
+                  <Link
+                    to="/experience"
+                    className="hover:text-link-hover-color"
+                  >
                     Experiências
                   </Link>
                 </ul>
