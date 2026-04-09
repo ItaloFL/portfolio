@@ -14,52 +14,6 @@ export interface Experience {
   techs: string[];
 }
 
-function TimelineItem({
-  experience,
-  index,
-}: {
-  experience: Experience;
-  index: number;
-}) {
-  const isLeft = index % 2 === 0;
-
-  return (
-    <RevealOnScroll>
-      <div className="relative grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-0 md:gap-8 mb-16">
-        <div
-          className={`flex flex-col ${
-            isLeft ? "md:order-1 md:items-end" : "md:order-3 md:items-start"
-          }`}
-        >
-          <ExperienceCard experience={experience} />
-        </div>
-
-        <div className="hidden md:flex flex-col items-center order-2 relative">
-          <div className="w-4 h-4 rounded-full bg-link-hover-color border-4 border-[#F9F9F9] dark:border-[#0F0F0F] z-10 mt-6 shrink-0" />
-          <div className="w-px flex-1 bg-border-color dark:bg-border-color-dark mt-1" />
-        </div>
-
-        <div
-          className={`flex flex-col justify-start ${
-            isLeft ? "md:order-3 md:items-start" : "md:order-1 md:items-end"
-          }`}
-        >
-          <DateBlock
-            period={experience.period}
-            duration={experience.duration}
-            align={isLeft ? "start" : "end"}
-          />
-        </div>
-
-        <div className="absolute left-0 top-0 h-full flex flex-col items-center md:hidden">
-          <div className="w-3 h-3 rounded-full bg-link-hover-color border-2 border-[#F9F9F9] dark:border-[#0F0F0F] z-10 mt-6 shrink-0" />
-          <div className="w-px flex-1 bg-border-color dark:bg-border-color-dark" />
-        </div>
-      </div>
-    </RevealOnScroll>
-  );
-}
-
 function DateBlock({
   period,
   duration,
@@ -71,14 +25,13 @@ function DateBlock({
 }) {
   return (
     <div
-      className={`pt-4 pl-8 md:pl-0 flex flex-col gap-1 ${
+      className={`pt-4 flex flex-col gap-1 ${
         align === "end" ? "md:items-end md:text-right" : "md:items-start"
       }`}
     >
       <p className="text-sm font-mono text-second-color dark:text-second-color-dark opacity-70">
         {period}
       </p>
-
       <span className="text-xs font-semibold uppercase tracking-widest text-link-hover-color">
         {duration}
       </span>
@@ -88,7 +41,7 @@ function DateBlock({
 
 function ExperienceCard({ experience }: { experience: Experience }) {
   return (
-    <div className="ml-8 md:ml-0 border border-border-color dark:border-border-color-dark rounded-xl p-6 bg-contrast-color dark:bg-contrast-color-dark transition-all hover:shadow-md">
+    <div className="border border-border-color dark:border-border-color-dark rounded-xl p-6 bg-contrast-color dark:bg-contrast-color-dark transition-all hover:shadow-md">
       <div className="flex items-start justify-between gap-3 mb-4">
         <div>
           <h3 className="text-xl font-bold text-title-color dark:text-title-color-dark leading-tight">
@@ -139,6 +92,58 @@ function ExperienceCard({ experience }: { experience: Experience }) {
   );
 }
 
+function TimelineItem({
+  experience,
+  index,
+}: {
+  experience: Experience;
+  index: number;
+}) {
+  const isLeft = index % 2 === 0;
+
+  return (
+    <RevealOnScroll>
+      <div className="md:hidden relative pl-8 mb-12">
+        <div className="absolute left-0 top-1 w-3 h-3 rounded-full bg-link-hover-color border-2 border-[#F9F9F9] dark:border-[#0F0F0F] z-10" />
+
+        <div className="mb-3">
+          <p className="text-sm font-mono text-second-color dark:text-second-color-dark opacity-70">
+            {experience.period}
+          </p>
+          <span className="text-xs font-semibold uppercase tracking-widest text-link-hover-color">
+            {experience.duration}
+          </span>
+        </div>
+
+        <ExperienceCard experience={experience} />
+      </div>
+
+      <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-8 mb-16">
+        <div
+          className={`flex flex-col ${isLeft ? "order-1 items-end" : "order-3 items-start"}`}
+        >
+          <ExperienceCard experience={experience} />
+        </div>
+
+        <div className="flex flex-col items-center order-2 relative">
+          <div className="w-4 h-4 rounded-full bg-link-hover-color border-4 border-[#F9F9F9] dark:border-[#0F0F0F] z-10 mt-6 shrink-0" />
+          <div className="w-px flex-1 bg-border-color dark:bg-border-color-dark mt-1" />
+        </div>
+
+        <div
+          className={`flex flex-col justify-start ${isLeft ? "order-3 items-start" : "order-1 items-end"}`}
+        >
+          <DateBlock
+            period={experience.period}
+            duration={experience.duration}
+            align={isLeft ? "start" : "end"}
+          />
+        </div>
+      </div>
+    </RevealOnScroll>
+  );
+}
+
 export function Experience() {
   return (
     <div className="bg-[#F9F9F9] dark:bg-[#0F0F0F] transition-colors min-h-screen pt-[6rem]">
@@ -157,7 +162,7 @@ export function Experience() {
         <div className="relative">
           <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-border-color dark:bg-border-color-dark" />
 
-          <div className="md:hidden absolute left-0 top-0 bottom-0 w-px bg-border-color dark:bg-border-color-dark" />
+          <div className="md:hidden absolute left-[5px] top-0 bottom-0 w-px bg-border-color dark:bg-border-color-dark" />
 
           {EXPERIENCES.map((exp, index) => (
             <TimelineItem key={exp.id} experience={exp} index={index} />
