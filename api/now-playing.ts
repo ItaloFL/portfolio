@@ -1,9 +1,10 @@
+import { env } from "@/env";
 import { VercelRequest, VercelResponse } from "@vercel/node";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const client_id = process.env.VITE_SPOTIFY_CLIENT_ID;
-  const client_secret = process.env.VITE_SPOTIFY_SECRET;
-  const refresh_token = process.env.VITE_SPOTIFY_REFRESH_TOKEN;
+  const client_id = env.SPOTIFY_CLIENT_ID;
+  const client_secret = env.SPOTIFY_SECRET;
+  const refresh_token = env.SPOTIFY_REFRESH_TOKEN;
 
   // URLs oficiais do Spotify
   const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
