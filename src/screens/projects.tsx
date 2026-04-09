@@ -5,7 +5,6 @@ export function Projects() {
   return (
     <div className="bg-[#F9F9F9] dark:bg-[#0F0F0F] transition-colors min-h-screen pt-[6rem]">
       <div className="max-w-5xl mx-auto px-10 py-[5rem]">
-        {/* Header */}
         <div className="mb-14">
           <p className="text-xs font-mono uppercase tracking-widest text-second-color dark:text-second-color-dark opacity-60 mb-3">
             — seleção de trabalhos

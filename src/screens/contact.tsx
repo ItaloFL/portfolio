@@ -44,7 +44,7 @@ export function Contact() {
             <ul className="flex items-center justify-center gap-3 mb-[4rem]">
               <li>
                 <Link
-                  to="https://github.com/ItaloFL"
+                  to="https://www.instagram.com/italonfl"
                   target="_blank"
                   className="flex items-center justify-center w-11 h-11 rounded-lg
                     border border-border-color dark:border-border-color-dark
