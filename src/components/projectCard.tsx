@@ -45,14 +45,21 @@ export function ProjectCard({
                 Privado
               </div>
             )}
-            <Link
-              to={sourceLink}
-              target="_blank"
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-color dark:bg-primary-color text-white text-sm font-medium hover:opacity-90 transition-opacity"
-            >
-              <ArrowSquareOut size={16} />
-              Ver site
-            </Link>
+            {sourceLink ? (
+              <Link
+                to={sourceLink}
+                target="_blank"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-color dark:bg-primary-color text-white text-sm font-medium hover:opacity-90 transition-opacity"
+              >
+                <ArrowSquareOut size={16} />
+                Ver site
+              </Link>
+            ) : (
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-white/40 text-sm font-medium cursor-not-allowed select-none">
+                <GithubLogo size={16} className="opacity-40" />
+                Sem Acesso
+              </div>
+            )}
           </div>
 
           {tag && (

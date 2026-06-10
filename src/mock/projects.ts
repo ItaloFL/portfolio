@@ -3,6 +3,7 @@ import coffeDelivery from "../assets/coffe-delivery.png";
 import kytecar from "../assets/test-repo-img.png";
 import porfolio from "../assets/print-portfolio.jpg";
 import giap from "../assets/giap-print.png";
+import orderly from "../assets/orderly.png";
 import atribuna from "../assets/atribuna-print.png";
 import Docker from "../assets/tools-logo/Docker.svg";
 import React from "../assets/tools-logo/React.svg";
@@ -13,6 +14,7 @@ import PostgreSQL from "../assets/tools-logo/PostgresSQL.svg";
 import Zod from "../assets/knowlege-logo/Zod.svg";
 import Git from "../assets/knowlege-logo/Git.svg";
 import Redis from "../assets/knowlege-logo/Redis.svg";
+import ReactQuery from "../assets/knowlege-logo/ReactQuery.svg";
 
 export interface Project {
   idProject: number;
@@ -20,7 +22,7 @@ export interface Project {
   title: string;
   description: string;
   repoLink: string | null;
-  sourceLink: string;
+  sourceLink: string | null;
   techIcons: string[];
   tag?: string;
 }
@@ -28,6 +30,26 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     idProject: 1,
+    imgURL: orderly,
+    title: "Orderly - Sistema de pedidos",
+    tag: "Full-Stack",
+    description:
+      "Plataforma de pedidos baseada em microsserviços com comunicação assíncrona via RabbitMQ, autenticação JWT e orquestração Docker.",
+    repoLink: "https://github.com/ItaloFL/orderly",
+    sourceLink: null,
+    techIcons: [
+      React,
+      TailwindCSS,
+      TypeScript,
+      Git,
+      Zod,
+      Docker,
+      ReactQuery,
+      Prisma,
+    ],
+  },
+  {
+    idProject: 2,
     imgURL: giap,
     title: "GIAP - Gestão Patrimonial",
     tag: "Frontend",
@@ -38,7 +60,7 @@ export const PROJECTS: Project[] = [
     techIcons: [React, TailwindCSS, TypeScript, Git, Zod],
   },
   {
-    idProject: 2,
+    idProject: 3,
     imgURL: atribuna,
     title: "Portal A Tribuna",
     tag: "Full-Stack",
@@ -59,7 +81,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    idProject: 3,
+    idProject: 4,
     imgURL: porfolio,
     title: "Portfólio",
     tag: "Frontend",
@@ -70,7 +92,7 @@ export const PROJECTS: Project[] = [
     techIcons: [React, TailwindCSS, TypeScript, Git, Zod],
   },
   {
-    idProject: 4,
+    idProject: 5,
     imgURL: kytecar,
     title: "Kyte Car",
     tag: "Full-Stack",
@@ -81,7 +103,7 @@ export const PROJECTS: Project[] = [
     techIcons: [React, Prisma, TailwindCSS, TypeScript, Docker, PostgreSQL],
   },
   {
-    idProject: 5,
+    idProject: 6,
     imgURL: coffeHouse,
     title: "Coffe House",
     tag: "Full-Stack",
@@ -92,7 +114,7 @@ export const PROJECTS: Project[] = [
     techIcons: [React, TypeScript, Docker, PostgreSQL],
   },
   {
-    idProject: 6,
+    idProject: 7,
     imgURL: coffeDelivery,
     title: "Coffe Delivery",
     tag: "Frontend",
