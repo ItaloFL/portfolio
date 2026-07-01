@@ -4,17 +4,17 @@ export const EXPERIENCES: Experience[] = [
   {
     id: 4,
     company: "VRSoftware",
-    type: "CLT",
+    type: "",
     role: "Desenvolvedor Backend",
     duration: "Atual",
     period: "Jul 2026 – Atual",
     description:
-      "Atuação no desenvolvimento e manutenção de sistemas corporativos do ecossistema Grupo VR, com foco em soluções financeiras, CRM, automação de processos e integrações entre plataformas proprietárias que sustentam operações de varejo multimarcas em escala nacional.",
+      "Atuação no desenvolvimento e manutenção de sistemas corporativos do ecossistema Grupo VR, com foco em soluções financeiras, CRM, automação de processos e integrações entre plataformas proprietárias que sustentam o varejo multimarcas em escala nacional.",
     highlights: [
-      "Desenvolve e mantém módulos da suite VR Automatize — ERP (VR Sync) e CRM (VR Flow) — garantindo gestão financeira, estoque, vendas e relacionamento com clientes em tempo real",
-      "Implementa REST APIs e workflows baseados em SQL para automação de processos operacionais, relatórios automatizados e otimização de fluxos entre sistemas internos",
+      "Desenvolve e mantém módulos da suite VR Automatize, como o VR Sync (ERP) e o VR Flow (CRM), para gestão financeira, estoque, vendas e relacionamento com clientes em tempo real",
+      "Implementa REST APIs e workflows em SQL para automação de processos operacionais, relatórios automatizados e otimização de fluxos entre sistemas internos",
       "Integra serviços do ecossistema Grupo VR, conectando ERP, CRM e ferramentas de automação multicanal para escalar operações de centenas de unidades de varejo",
-      "Contribui para a confiabilidade e performance da tecnologia proprietária, assegurando alta disponibilidade e resposta ágil nas operações do grupo",
+      "Contribui para a confiabilidade e performance da tecnologia proprietária, com foco em alta disponibilidade e resposta ágil nas operações do grupo",
     ],
     techs: [
       "REST APIs",
