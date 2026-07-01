@@ -46,9 +46,11 @@ function ExperienceCard({ experience }: { experience: Experience }) {
         <div>
           <h3 className="text-xl font-bold text-title-color dark:text-title-color-dark leading-tight">
             {experience.company}
-            <span className="ml-2 text-sm font-normal text-second-color dark:text-second-color-dark opacity-60">
-              ({experience.type})
-            </span>
+            {experience.type && (
+              <span className="ml-2 text-sm font-normal text-second-color dark:text-second-color-dark opacity-60">
+                ({experience.type})
+              </span>
+            )}
           </h3>
           <div className="flex items-center gap-3 mt-2">
             <span className="text-xs font-semibold px-3 py-1 rounded-full border border-link-hover-color text-link-hover-color">
